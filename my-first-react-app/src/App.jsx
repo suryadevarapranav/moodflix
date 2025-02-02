@@ -71,8 +71,8 @@ const App = () => {
     }
 
     useEffect(() => {
-        fetchMovies(searchTerm);
-    }, [searchTerm])
+        fetchMovies(debouncedSearchTerm);
+    }, [debouncedSearchTerm]); // using the debouncedSearch term to fetch the movies preventing too many requests.
 
     return (
         <main>
