@@ -184,3 +184,25 @@ Another important concept is React is the concept of `key`, whenever we're mappi
 to provide a key to each of these elements to map over. The key has to be unique. 
 This is needed especially if we're trying to delete some movies from the list.
 
+With the current search functionality, we have the search being triggered after every single letter being typed.
+We want to optimize that, so that server/api load increases, exhausting resources and also accounts for bad UX.
+We will use `Input Debouncing` to address this issue. This technique helps us to delay the request until the user has stopped typing and thus reduces the frequency of the API calls.
+
+We have a `useDebounce()` hook from the `react-use` package. 
+> npm install react-use
+
+```
+Implicit Return
+===============
+
+useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
+
+Explicit Function Body
+======================
+
+useDebounce(() => {
+    setDebouncedSearchTerm(searchTerm);
+}, 500, [searchTerm]);
+
+```
+
