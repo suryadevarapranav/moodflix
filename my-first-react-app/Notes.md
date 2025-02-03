@@ -237,3 +237,6 @@ const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
             Query.equal('searchTerm', searchTerm)
         ]);
 ```
+
+Bug Fix found: Attribute name had a mistake in the database creation.
+
