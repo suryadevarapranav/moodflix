@@ -157,13 +157,15 @@ State fields can be passed down as props. Props are basically inputs that we pas
 **You should never mutate state directly, it is forbidden. You only mutate the state using the setter function. 
 This is important behind the scenes for react to always know the value of the state**
 
-### Using APIs
+#### Using APIs
 TMDB API - https://developer.themoviedb.org/reference
 
 In React Apps you never want to key right in the code by simply assigning it to a variable.
 We instead want to use the env variables.
 
 API - Application Programmig Interface and it's simply a set of rules that allows one software application to talk to another (like a DB or server).
+
+#### Search Functionality
 
 We define the API options, where we specify method and headers which include the accepted data format and authorization details.
 
@@ -183,6 +185,8 @@ Arrow Functions
 Another important concept is React is the concept of `key`, whenever we're mapping over a list of elements. We'd wanna make sure,
 to provide a key to each of these elements to map over. The key has to be unique. 
 This is needed especially if we're trying to delete some movies from the list.
+
+#### Optimized Search
 
 With the current search functionality, we have the search being triggered after every single letter being typed.
 We want to optimize that, so that server/api load increases, exhausting resources and also accounts for bad UX.
@@ -206,3 +210,30 @@ useDebounce(() => {
 
 ```
 
+#### Trending
+This requires tracking and analyzing search patterns over time. We need a place to store the data permanently, 
+state is a way of storing data but it's not a permanent store. But a database is a permanent store. 
+Implementing this would mean a full stack application, Backend development as well. 
+But for simple tasks we could use a BaaS (Backend as a Service) platforms like Firebase or appwrite.
+
+Install Appwrite
+> npm install appwrite
+
+We get access to Appwrite's functionality by defining a new `Appwrite` client.
+
+```
+// setting up the appwrite client
+const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject(PROJECT_ID);
+
+// we need to define which functionality we want to use
+const database = new Databases(client);
+
+// finally we get try to get the data from the database, we pass in the database and collection id and 
+// the query which equals the serach term in the database.
+
+const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+            Query.equal('searchTerm', searchTerm)
+        ]);
+```
