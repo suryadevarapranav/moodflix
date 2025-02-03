@@ -240,3 +240,9 @@ const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
 
 Bug Fix found: Attribute name had a mistake in the database creation.
 
+### Deployment
+> npm run build
+
+This will generate the optimized production build of our application. We get an additional `dist` (distro/distribution) folder now.
+
+Just copy the contents of the dist folder to the hosting site and you'd have it online for everyone to use.
