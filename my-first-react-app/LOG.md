@@ -140,4 +140,9 @@ we can simply go to `main.jsx` and remove the `<StrictMode>` wrapper.
 
 To run the effect only when something changes, we use a `dependecy array`, which we pass as a second paramter to the `useEffect` as `deps`
 
+### Modern React Snippets - Plugin
 
+`rafce` - shortcut to create a new reactArrowFunctionComponent with a default export.
+
+#### TailwindCSS [Setup](https://tailwindcss.com/docs/installation/using-vite).
+> npm install tailwindcss @tailwindcss/vite
