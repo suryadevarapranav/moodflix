@@ -146,3 +146,13 @@ To run the effect only when something changes, we use a `dependecy array`, which
 
 #### TailwindCSS [Setup](https://tailwindcss.com/docs/installation/using-vite).
 > npm install tailwindcss @tailwindcss/vite
+
+### Components
+We create a new folder inside the `src` folder and then proceed to create components there. 
+We can import a component to use by simply using a self-closing tag.
+State fields can be passed down as props. Props are basically inputs that we pass into a component like arguments to a function.
+
+**Props should never be changed by the child component, they are read only. Because it would break the main behavior of react and actually mutate the prop in multiple spaces.**
+
+**You should never mutate state directly, it is forbidden. You only mutate the state using the setter function. 
+This is important behind the scenes for react to always know the value of the state**
