@@ -127,7 +127,7 @@ When the State changes react automatically re-renders the component to reflect o
 * `useEffect` - for handling side effects like data fetching.
 * `useContext` - for sharing data across components.
 * `useCallbacks` - for optimizing callback functions.
-* More like useMemo, useRef, useReducer, useTransistion etc...
+* More like useMemo, useRef, useReducer, useTransistion, useActionState etc...
 
 ### useEffect()
 
