@@ -156,3 +156,31 @@ State fields can be passed down as props. Props are basically inputs that we pas
 
 **You should never mutate state directly, it is forbidden. You only mutate the state using the setter function. 
 This is important behind the scenes for react to always know the value of the state**
+
+### Using APIs
+TMDB API - https://developer.themoviedb.org/reference
+
+In React Apps you never want to key right in the code by simply assigning it to a variable.
+We instead want to use the env variables.
+
+API - Application Programmig Interface and it's simply a set of rules that allows one software application to talk to another (like a DB or server).
+
+We define the API options, where we specify method and headers which include the accepted data format and authorization details.
+
+To fetch the data, we use an `async` function and it's a good practice to use the  `try-catch` block. This is because if something fails during the API call, we can catch the error.
+
+React has a pretty cool feature, where we can display the error in the browser. React makes it simple by declaring a new state. 
+
+`fetch()` is a built-in JavaScript function that allows us to make HTTP requests. In React `fetch` is often used to get the data from the API.
+
+```
+Arrow Functions
+================
+
+(args) => {return ()};
+(args) => (); : Automatically returns. Useful to make code look clean, when dealing with functions like map.
+```
+Another important concept is React is the concept of `key`, whenever we're mapping over a list of elements. We'd wanna make sure,
+to provide a key to each of these elements to map over. The key has to be unique. 
+This is needed especially if we're trying to delete some movies from the list.
+
