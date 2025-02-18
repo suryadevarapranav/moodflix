@@ -246,3 +246,21 @@ Bug Fix found: Attribute name had a mistake in the database creation.
 This will generate the optimized production build of our application. We get an additional `dist` (distro/distribution) folder now.
 
 Just copy the contents of the dist folder to the hosting site and you'd have it online for everyone to use.
+
+### Used the following commands to fix my mistake of Organizing the Project Structure
+
+###### Move into the my-first-react-app directory
+cd my-first-react-app
+
+###### Move everything to the root of the repository
+mv * .[^.]* .. 
+
+###### Move back to the root directory
+cd ..
+
+###### Remove the now-empty my-first-react-app directory
+rm -rf my-first-react-app
+
+###### get rid of .idea and node_modules
+rm -rf .idea node_modules
+
